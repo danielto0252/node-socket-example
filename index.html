@@ -1,0 +1,11 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+  var socket = io.connect('http://localhost:3000');
+  socket.on('boom', function (data) {
+  	console.log('BOOOOMMMMM!!!!!!!');
+    console.log(data);
+    socket.emit('splat', { my: 'data' });
+  });
+
+</script>
